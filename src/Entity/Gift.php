@@ -27,7 +27,7 @@ class Gift
     private $code;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
@@ -37,13 +37,13 @@ class Gift
     private $price;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Receiver")
+     * @ORM\ManyToOne(targetEntity="Receiver", cascade={"persist"})
      * @ORM\JoinColumn(name="receiver_id", referencedColumnName="id")
      */
     private $receiver;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Warehouse")
+     * @ORM\ManyToOne(targetEntity="Warehouse", cascade={"persist"})
      * @ORM\JoinColumn(name="warehouse_id", referencedColumnName="id")
      */
     private $warehouse;
@@ -82,7 +82,7 @@ class Gift
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
