@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\Gift;
 use App\Entity\Receiver;
+use App\Entity\User;
 use App\Entity\Warehouse;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\ResultSetMapping;

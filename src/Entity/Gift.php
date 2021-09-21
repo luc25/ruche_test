@@ -38,13 +38,13 @@ class Gift
 
     /**
      * @ORM\ManyToOne(targetEntity="Receiver", cascade={"persist"})
-     * @ORM\JoinColumn(name="receiver_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="receiver_id", referencedColumnName="id", nullable=false)
      */
     private $receiver;
 
     /**
      * @ORM\ManyToOne(targetEntity="Warehouse", cascade={"persist"})
-     * @ORM\JoinColumn(name="warehouse_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="warehouse_id", referencedColumnName="id", nullable=false)
      */
     private $warehouse;
 
